@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>JavaScript之Canvas</title>
+</head>
+
+<body>
+
+    <canvas id="canvas" width="400" height="300">抱歉，您的浏览器不支持canvas元素</canvas>
+
+
+    <script>  
+        var canvas = document.getElementById("canvas");
+
+        //检测浏览器是否支持canvas 该方法是否存在 取得上下文对象  
+        if (canvas.getContext) {
+            var context0 = canvas.getContext("2d");
+            context0.strokeStyle = "blue";//画笔颜色
+            context0.moveTo(0, 0);//线的起点
+            context0.lineTo(200, 100);//线的终点
+            context0.stroke();//画线
+            context0.strokeStyle = "purple";
+            context0.moveTo(200,200);
+            context0.lineTo(300,400);
+            context0.stroke();
+            var context = canvas.getContext("2d"); // 
+            context.strokeStyle = "red"; // 描边颜色为红色
+            context.lineWidth = 2; //指定描边线的宽度  
+            context.strokeRect(50, 50, 120, 200);   //用指定的颜色描边矩形  
+            context.strokeStyle="yellow";
+            context.strokeRect(20, 20, 100, 150);
+        }  
+    </script>
+</body>
+
+</html>
